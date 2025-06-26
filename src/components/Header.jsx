@@ -11,14 +11,24 @@ export default function Header() {
 
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold cursor-pointer" onClick={() => navigate("/")}>
+      <h1
+        className="text-xl font-bold cursor-pointer"
+        onClick={() => navigate("/")}
+      >
         Task Manager
       </h1>
       <nav className="space-x-4">
         {isAuth ? (
           <>
-            <Link to="/" className="hover:underline">Home</Link>
-            <Link to="/add" className="hover:underline">Add Task</Link>
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>
+            <Link to="/add" className="hover:underline">
+              Add Task
+            </Link>
+            <Link to="/account" className="hover:underline">
+              Account
+            </Link>
             <button
               onClick={handleLogout}
               className="hover:underline text-red-400 ml-2"
@@ -28,8 +38,12 @@ export default function Header() {
           </>
         ) : (
           <>
-            <Link to="/login" className="hover:underline">Login</Link>
-            <Link to="/register" className="hover:underline">Register</Link>
+            <Link to="/login" className="hover:underline">
+              Login
+            </Link>
+            <Link to="/register" className="hover:underline">
+              Register
+            </Link>
           </>
         )}
       </nav>
